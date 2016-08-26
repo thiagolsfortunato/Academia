@@ -2,6 +2,9 @@ package br.com.fatec.academia.model;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 @Entity
 @Table(name = "ATL_ATLETA")
 public class Atleta extends Pessoa{
