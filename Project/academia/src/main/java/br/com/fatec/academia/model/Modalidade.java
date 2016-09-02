@@ -2,9 +2,13 @@ package br.com.fatec.academia.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +28,10 @@ public class Modalidade {
 	
 	@Column(name = "MOD_DESCRICAO")
 	private String descricao;
-		
+	
+	@ManyToOne(fetch = FetchType.LAZY) @JoinTable(name = "MOD_MODALIDADE", 
+			joinColumns = { @JoinColumn(name = "MOD_ID") }, inverseJoinColumns = 
+		{ @JoinColumn(name = "PRF_ID") })
 	private Professor professor;
 	
 	public int getId() {

@@ -7,10 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "PES_PESSOA")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pessoa {
 	
 	@Id 
@@ -20,8 +23,10 @@ public abstract class Pessoa {
 	
 	@Column(name = "PES_NOME")
 	private String nome;
+	
 	@Column(name = "PES_DATA")
 	private Date data;
+	
 	@Column(name = "PES_SEXO")
 	private String sexo;
 	

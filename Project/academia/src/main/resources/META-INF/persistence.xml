@@ -7,8 +7,12 @@
   
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-        <!--  <class>br.gov.sp.fatec.model.Usuario</class> -->
-
+        <class>br.com.fatec.academia.model.Pessoa</class>
+        <class>br.com.fatec.academia.model.Armario</class>
+        <class>br.com.fatec.academia.model.Modalidade</class>
+        <class>br.com.fatec.academia.model.Atleta</class>
+        <class>br.com.fatec.academia.model.Professor</class>
+        
         <properties>
 
 	        <property name="javax.persistence.jdbc.driver"
