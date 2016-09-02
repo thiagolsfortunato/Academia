@@ -8,22 +8,29 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "AMR_ARMARIO")
+@Table(name = "ARM_ARMARIO")
 public class Armario {
 
 	@Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "AMR_ID")
+    @Column(name = "ARM_ID")
 	private int id;
 	
-	@Column(name = "AMR_FILEIRA")
+	@Column(name = "ARM_FILEIRA")
 	private String fileira;
 	
-	@Column(name = "AMR_COLUNA")
+	@Column(name = "ARM_COLUNA")
 	private String coluna;
 	
-	@Column(name = "AMR_CORREDOR")
+	@Column(name = "ARM_CORREDOR")
 	private String corredor;
+	
+
+	public Armario(String fileira, String coluna, String corredor) {
+		this.fileira = fileira;
+		this.coluna = coluna;
+		this.corredor = corredor;
+	}
 	
 	public int getId() {
 		return id;
