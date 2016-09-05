@@ -1,17 +1,19 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+          http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
         version="2.0">
 
     <persistence-unit name="academia">
   
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>br.com.fatec.academia.model.Pessoa</class>
         <class>br.com.fatec.academia.model.Armario</class>
-        <class>br.com.fatec.academia.model.Modalidade</class>
-        <class>br.com.fatec.academia.model.Atleta</class>
+        <class>br.com.fatec.academia.model.Pessoa</class>
         <class>br.com.fatec.academia.model.Professor</class>
+        <class>br.com.fatec.academia.model.Atleta</class>
+        <class>br.com.fatec.academia.model.Modalidade</class>
+        
         
         <properties>
 
@@ -22,7 +24,7 @@
 	            value="jdbc:mysql://localhost:3306/academia" />
 	  
 	        <property name="javax.persistence.jdbc.user" value="root" />
-	        <property name="javax.persistence.jdbc.password" value="" />
+	        <property name="javax.persistence.jdbc.password" value="fatec" />
 	
 	        <property name="hibernate.dialect" 
 	            value="org.hibernate.dialect.MySQLDialect" />

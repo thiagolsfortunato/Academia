@@ -25,13 +25,16 @@ public class Armario {
 	@Column(name = "ARM_CORREDOR")
 	private String corredor;
 	
-
+	
+	public Armario(){
+		
+	}
+	
 	public Armario(String fileira, String coluna, String corredor) {
 		this.fileira = fileira;
 		this.coluna = coluna;
 		this.corredor = corredor;
 	}
-	
 	public int getId() {
 		return id;
 	}
