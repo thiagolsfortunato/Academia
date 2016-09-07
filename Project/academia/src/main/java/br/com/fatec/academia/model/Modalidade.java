@@ -33,6 +33,13 @@ public class Modalidade {
 	@JoinColumn(name = "PES_ID", nullable = true)
 	private Professor professor;
 	
+	
+	public Modalidade(String nome, boolean ativo, String descricao) {
+		this.nome = nome;
+		this.ativo = ativo;
+		this.descricao = descricao;
+	}
+	
 	public int getId() {
 		return id;
 	}

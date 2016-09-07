@@ -24,7 +24,7 @@
 	            value="jdbc:mysql://localhost:3306/academia" />
 	  
 	        <property name="javax.persistence.jdbc.user" value="root" />
-	        <property name="javax.persistence.jdbc.password" value="fatec" />
+	        <property name="javax.persistence.jdbc.password" value="" />
 	
 	        <property name="hibernate.dialect" 
 	            value="org.hibernate.dialect.MySQLDialect" />

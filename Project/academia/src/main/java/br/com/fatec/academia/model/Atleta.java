@@ -1,5 +1,7 @@
 package br.com.fatec.academia.model;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -22,6 +24,13 @@ public class Atleta extends Pessoa{
 	@OneToOne(fetch = FetchType.LAZY, optional = true)
 	@JoinColumn(name="ARM_ID", nullable = true)
 	private Armario armario;
+			
+
+	public Atleta(String nome, Date data, String sexo, Armario armario) {
+		super(nome, data, sexo);
+		this.armario = armario;
+		modalidades = new ArrayList<>();
+	}
 
 	public Armario getArmario() {
 		return armario;
@@ -35,7 +44,7 @@ public class Atleta extends Pessoa{
 		return modalidades;
 	}
 
-	public void setModalidades(List<Modalidade> modalidades) {
-		this.modalidades = modalidades;
+	public void addModalidade(Modalidade m){
+		modalidades.add(m);
 	}
 }
