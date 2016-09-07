@@ -30,6 +30,15 @@ public abstract class Pessoa {
 	@Column(name = "PES_SEXO")
 	private String sexo;
 	
+	public Pessoa(){
+		
+	}
+	
+	public Pessoa(String nome, Date data, String sexo) {
+		this.nome = nome;
+		this.data = data;
+		this.sexo = sexo;
+	}
 	public int getId() {
 		return id;
 	}
@@ -53,5 +62,7 @@ public abstract class Pessoa {
 	}
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
-	}	
+	}
+	
+	public abstract void addModalidade(Modalidade m);
 }
