@@ -1,10 +1,16 @@
-package br.com.fatec.academia.model;
+package br.com.fatec.academia.test;
 
 import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import br.com.fatec.academia.model.Armario;
+import br.com.fatec.academia.model.Atleta;
+import br.com.fatec.academia.model.Modalidade;
+import br.com.fatec.academia.model.Pessoa;
+import br.com.fatec.academia.model.Professor;
 
 public class Teste {
 	public static void main(String[] args) {

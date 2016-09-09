@@ -24,7 +24,8 @@ public class Atleta extends Pessoa{
 	@OneToOne(fetch = FetchType.LAZY, optional = true)
 	@JoinColumn(name="ARM_ID", nullable = true)
 	private Armario armario;
-			
+	
+	public Atleta (){}
 
 	public Atleta(String nome, Date data, String sexo, Armario armario) {
 		super(nome, data, sexo);
