@@ -15,6 +15,8 @@ import javax.persistence.Table;
 @Table(name = "MOD_MODALIDADE")
 public class Modalidade {
 	
+	public Modalidade(){}
+	
 	@Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "MOD_ID")

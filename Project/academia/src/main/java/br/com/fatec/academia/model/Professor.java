@@ -13,6 +13,8 @@ import javax.persistence.Table;
 @Table(name = "PRF_PROFESSOR")
 public class Professor extends Pessoa{
 	
+	public Professor(){}
+	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "professor")	
 	private List<Modalidade> modalidades;
 	
