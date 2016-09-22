@@ -1,4 +1,4 @@
-package br.com.fatec.academia.model;
+package br.com.fatec.academia.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
