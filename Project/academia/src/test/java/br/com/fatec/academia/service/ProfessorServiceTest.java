@@ -1,6 +1,6 @@
 package br.com.fatec.academia.service;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
@@ -28,6 +28,6 @@ public class ProfessorServiceTest {
 	public void addProfessor(){
 		Professor prof = new Professor("Zé", new Date(System.currentTimeMillis()), "M");
 		professorService.save(prof);
-		assertEquals(1,prof.getId());
+		assertTrue(prof.getId() != null);
 	}
 }

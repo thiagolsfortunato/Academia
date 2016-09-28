@@ -20,7 +20,7 @@ public class Modalidade {
 	@Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "MOD_ID")
-	private int id;
+	private Integer id;
 	
 	@Column(name = "MOD_NOME")
 	private String nome;
@@ -42,7 +42,7 @@ public class Modalidade {
 		this.descricao = descricao;
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {

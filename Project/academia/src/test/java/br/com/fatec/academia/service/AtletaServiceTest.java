@@ -1,6 +1,6 @@
 package br.com.fatec.academia.service;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
@@ -35,6 +35,6 @@ public class AtletaServiceTest {
 		
 		Atleta atl = new Atleta("Jão", new Date(System.currentTimeMillis()), "M", a);
 		atletaService.save(atl);
-		assertEquals(1,atl.getId());
+		assertTrue(atl.getId() != null);
 	}
 }

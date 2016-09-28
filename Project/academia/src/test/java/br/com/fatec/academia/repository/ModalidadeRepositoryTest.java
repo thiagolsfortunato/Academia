@@ -1,7 +1,10 @@
 package br.com.fatec.academia.repository;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Date;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
@@ -25,6 +28,7 @@ public class ModalidadeRepositoryTest {
 	@Autowired
 	ProfessorRepository professorRepo;
 	
+	@Test
 	public void addModalidade(){
 		Professor prof = new Professor("Zé", new Date(System.currentTimeMillis()), "M");
 		professorRepo.save(prof);
@@ -32,5 +36,7 @@ public class ModalidadeRepositoryTest {
 		Modalidade mod = new Modalidade("Judô", true, "Porrada");
 		mod.setProfessor(prof);
 		modalidadeRepo.save(mod);
+		
+		assertTrue(mod.getId() != null);
 	}
 }

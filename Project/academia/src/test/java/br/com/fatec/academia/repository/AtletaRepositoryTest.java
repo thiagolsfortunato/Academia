@@ -1,6 +1,6 @@
 package br.com.fatec.academia.repository;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
@@ -36,6 +36,6 @@ public class AtletaRepositoryTest {
 		
 		Atleta atl = new Atleta("Jão", new Date(System.currentTimeMillis()), "M", a);
 		atletaRepo.save(atl);
-		assertEquals(1,atl.getId());
+		assertTrue(atl.getId() != null);
 	}
 }

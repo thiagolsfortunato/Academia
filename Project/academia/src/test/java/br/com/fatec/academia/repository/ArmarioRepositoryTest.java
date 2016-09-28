@@ -1,6 +1,6 @@
 package br.com.fatec.academia.repository;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,6 +27,6 @@ public class ArmarioRepositoryTest extends AbstractTransactionalJUnit4SpringCont
 	public void addArmario(){
 		Armario arm = new Armario("10", "3", "4");
 		armarioRepo.save(arm);
-		assertEquals(1,arm.getId());
+		assertTrue(arm.getId() != null);
 	}
 }
