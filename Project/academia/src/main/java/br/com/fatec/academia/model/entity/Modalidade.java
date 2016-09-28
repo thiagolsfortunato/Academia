@@ -28,7 +28,7 @@ public class Modalidade {
 	@Column(name = "MOD_ATIVO")
 	private boolean ativo;
 	
-	@Column(name = "MOD_DESCRICAO")
+	@Column(name = "MOD_DESCRICAO", unique = true)
 	private String descricao;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = true) 

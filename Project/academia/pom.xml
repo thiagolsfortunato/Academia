@@ -10,7 +10,6 @@
   <name>academia</name>
   <url>http://maven.apache.org</url>
   
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <org.springframework.version>4.2.4.RELEASE</org.springframework.version>
@@ -47,7 +46,6 @@
     </dependency>
     
     <!-- Hibernate -->
-    
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
@@ -65,10 +63,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.version}</version>
     </dependency>
-
-    
+   
   </dependencies> 
-
-  
   
 </project>
