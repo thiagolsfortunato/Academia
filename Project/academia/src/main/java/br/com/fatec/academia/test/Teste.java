@@ -10,11 +10,11 @@ import br.com.fatec.academia.model.entity.Atleta;
 import br.com.fatec.academia.model.entity.Modalidade;
 import br.com.fatec.academia.model.entity.Pessoa;
 import br.com.fatec.academia.model.entity.Professor;
-import br.com.fatec.academia.model.repository.ArmarioRepository;
-import br.com.fatec.academia.model.repository.AtletaRepository;
-import br.com.fatec.academia.model.repository.ModalidadeRepository;
-import br.com.fatec.academia.model.repository.PessoaRepository;
-import br.com.fatec.academia.model.repository.ProfessorRepository;
+import br.com.fatec.academia.model.service.ArmarioService;
+import br.com.fatec.academia.model.service.AtletaService;
+import br.com.fatec.academia.model.service.ModalidadeService;
+import br.com.fatec.academia.model.service.PessoaService;
+import br.com.fatec.academia.model.service.ProfessorService;
 
 public class Teste {
 	public static <S> void main(String[] args) {
@@ -23,31 +23,29 @@ public class Teste {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
 		
-		ArmarioRepository armarioRepo = (ArmarioRepository) context.getBean("armarioRepository");
-		AtletaRepository atletaRepo = (AtletaRepository) context.getBean("atletaRepository");
-		ModalidadeRepository modalidadeRepo = (ModalidadeRepository) context.getBean("modalidadeRepository");
-		PessoaRepository pessoaRepo = (PessoaRepository) context.getBean("pessoaRepository");
-		ProfessorRepository professorRepo = (ProfessorRepository) context.getBean("professorRepository");
+		ArmarioService armarioService = (ArmarioService)context.getBean("armarioService");
+		AtletaService atletaService = (AtletaService)context.getBean("atletaService");
+		ModalidadeService modalidadeService = (ModalidadeService)context.getBean("modalidadeService");
+		PessoaService pessoaService = (PessoaService)context.getBean("pessoaService");
+		ProfessorService professorService = (ProfessorService)context.getBean("professorService");
 		
-		//Inserção de armário
 		Armario a = new Armario("10", "3", "4");
-		armarioRepo.save(a);
-
-		
-		
-		//Inserção de atleta e seu armário
-		Pessoa atleta = new Atleta("Jão", new Date(System.currentTimeMillis()), "M", a);
-		atletaRepo.save((Atleta)atleta);
+		armarioService.save(a);
 		
 		//Inserção de professor
 		Pessoa professor = new Professor("Zé", new Date(System.currentTimeMillis()), "M");
-		professorRepo.save((Professor)professor);
+		professorService.save(professor);
+
 		
 		//Inserção de modalidade com professor e atleta
 		Modalidade modalidade = new Modalidade("Judô", true, "Porrada");
-		professor.addModalidade(modalidade);
+		modalidade.setProfessor((Professor)professor);
+		modalidadeService.save(modalidade);
+		
+		//Inserção de atleta e seu armário
+		Pessoa atleta = new Atleta("Jão", new Date(System.currentTimeMillis()), "M", a);
 		atleta.addModalidade(modalidade);
-		modalidadeRepo.save(modalidade);
+		atletaService.save(atleta);
 
 	}
 	

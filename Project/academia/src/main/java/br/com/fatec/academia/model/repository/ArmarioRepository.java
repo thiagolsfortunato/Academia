@@ -7,5 +7,7 @@ import br.com.fatec.academia.model.entity.Armario;
 
 @Repository
 public interface ArmarioRepository extends CrudRepository<Armario, Long> {
+	
+	public Armario findById(int id);
 
 }
