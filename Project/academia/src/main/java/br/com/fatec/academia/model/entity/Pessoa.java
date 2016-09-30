@@ -19,7 +19,7 @@ public abstract class Pessoa {
 	@Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "PES_ID")
-	private int id;
+	private Integer id;
 	
 	@Column(name = "PES_NOME")
 	private String nome;
@@ -39,10 +39,10 @@ public abstract class Pessoa {
 		this.data = data;
 		this.sexo = sexo;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNome() {
