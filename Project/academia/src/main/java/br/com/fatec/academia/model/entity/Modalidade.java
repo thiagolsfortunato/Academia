@@ -19,7 +19,7 @@ public class Modalidade {
 	
 	@Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "MOD_ID")
+    @Column(name = "MOD_ID", unique = true)
 	private Integer id;
 	
 	@Column(name = "MOD_NOME")
@@ -28,7 +28,7 @@ public class Modalidade {
 	@Column(name = "MOD_ATIVO")
 	private boolean ativo;
 	
-	@Column(name = "MOD_DESCRICAO", unique = true)
+	@Column(name = "MOD_DESCRICAO")
 	private String descricao;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = true) 
